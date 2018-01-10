@@ -48,4 +48,17 @@ describe('OrderedList', ()=> {
 		const ol = wrapper.find('ol');
 		expect(ol).toHaveLength(1);
 	});
+
+	it('has 4 li elements', () => {
+		const wrapper = shallow(<OrderedList {...mockProps}/>);
+		const li = wrapper.find('li');
+		expect(li).toHaveLength(4);
+	});
+
+	it('first row has 2 spans', () => {
+		const wrapper = shallow(<OrderedList {...mockProps}/>);
+		const li = wrapper.find('li').first();
+		const span = li.find('span');
+		expect(span).toHaveLength(2);
+	});
 });
