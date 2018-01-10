@@ -1,7 +1,9 @@
 /* @flow */
 
+type DateNameArrayType = Array<{date: Date, name: string}>;
+
 class ListOrderer {
-	order(list: Array<string>){
+	order(list: DateNameArrayType): DateNameArrayType{
 		return list;
 	}
 }
