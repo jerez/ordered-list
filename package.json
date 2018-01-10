@@ -6,13 +6,22 @@
   "scripts": {
     "lint": "eslint src",
     "flow": "flow",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.9",
+    "@storybook/addon-info": "^3.3.9",
+    "@storybook/addon-knobs": "^3.3.9",
+    "@storybook/addon-links": "^3.3.9",
+    "@storybook/addons": "^3.3.9",
+    "@storybook/react": "^3.3.9",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
     "babel-preset-env": "^1.6.1",
@@ -30,5 +39,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.4"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0"
   }
 }
