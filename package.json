@@ -2,8 +2,11 @@
   "name": "ordered-list",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/ordered-list.cjs.js",
+  "module": "dist/ordered-list.esm.js",
+  "browser": "dist/ordered-list.umd.js",
   "scripts": {
+    "build": "rollup -c",
     "lint": "eslint src",
     "flow": "flow",
     "test": "jest",
@@ -24,6 +27,8 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-lodash": "^3.3.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
@@ -35,7 +40,12 @@
     "flow-bin": "^0.63.1",
     "jest": "^22.1.2",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "rollup": "^0.54.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-flow": "^1.1.1",
+    "rollup-plugin-node-resolve": "^3.0.2"
   },
   "dependencies": {
     "lodash": "^4.17.4"
