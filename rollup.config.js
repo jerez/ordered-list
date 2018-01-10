@@ -14,6 +14,11 @@ export default
 		// browser-friendly UMD build
 		{name: 'ordered-list', file: pkg.browser, format: 'umd'}
 	],
+	external: ['react', 'react-dom'],
+	globals: {
+		react: 'React',
+		'react-dom': 'ReactDOM'
+	},
 	plugins: [
 		resolve({jsnext: true}), // so Rollup can find dependencies
 		commonjs({include: 'node_modules/**'}), // so Rollup can convert dependencies to an ES module
