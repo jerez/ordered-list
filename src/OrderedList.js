@@ -25,7 +25,7 @@ const OrderItem = ({date, name}: DateNameItem, index: number) => (
 	</li>
 );
 
-const OrderedList = ({list, sortBy, sortOrder}: propTypes) =>(
+const OrderedListFunc = ({list, sortBy, sortOrder}: propTypes) =>(
 	<ol>
 		{
 			list && listOrderer.order(list, sortBy, sortOrder).map((item, index) => (
@@ -34,5 +34,15 @@ const OrderedList = ({list, sortBy, sortOrder}: propTypes) =>(
 		}
 	</ol>
 );
+
+class OrderedList extends React.Component {
+	constructor(props: propTypes){
+		super(props);
+	}
+
+	render(){
+		return OrderedListFunc(this.props);
+	}
+}
 
 export default OrderedList;

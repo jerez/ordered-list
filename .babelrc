@@ -6,5 +6,6 @@
 				"env", "react", "flow"
 			]
 		}
-	}
+	},
+	"plugins": ["external-helpers"]
 }
