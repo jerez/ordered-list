@@ -1,7 +1,14 @@
 /* @flow */
 
 import React from 'react';
-import {type DateNameArrayType, type SortByType, type SortOrderType} from './Types';
+import listOrderer from './ListOrderer';
+
+import {
+	type DateNameArrayType,
+	type SortByType,
+	type SortOrderType,
+	type DateNameItem
+} from './Types';
 
 type propTypes = {
   list: DateNameArrayType,
@@ -9,9 +16,23 @@ type propTypes = {
   sortOrder: SortOrderType,
 }
 
-const OrderedList = (props: propTypes) => // eslint-disable-line no-unused-vars
+const OrderItem = ({date, name}: DateNameItem, index: number) => (
+	<li key={index}>
+		<div>
+			<span>{date.toLocaleDateString()}</span>
+			<span>{name}</span>
+		</div>
+	</li>
+);
+
+const OrderedList = ({list, sortBy, sortOrder}: propTypes) =>(
 	<ol>
-		<span>Component placeholder</span>
-	</ol>;
+		{
+			list && listOrderer.order(list, sortBy, sortOrder).map((item, index) => (
+				OrderItem(item, index)
+			))
+		}
+	</ol>
+);
 
 export default OrderedList;
