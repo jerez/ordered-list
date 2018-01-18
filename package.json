@@ -11,7 +11,8 @@
     "flow": "flow",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+		"build-storybook": "build-storybook",
+		"postinstall": "postinstall-build \"npm run build\""
   },
   "keywords": [],
   "author": "",
@@ -48,5 +49,8 @@
   },
   "peerDependencies": {
     "react": "^16.2.0"
+  },
+  "dependencies": {
+    "postinstall-build": "^5.0.1"
   }
 }
